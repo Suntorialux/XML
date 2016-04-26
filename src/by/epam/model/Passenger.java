@@ -14,6 +14,24 @@ public class Passenger {
 	private String destinationTown;
 	private String destinationDate;
 	private String destinationTime;
+	
+	
+	public Passenger() {
+		super();
+		this.id = 0;
+		this.firstName = null;
+		this.lastName = null;
+		this.street = null;
+		this.town = null;
+		this.homeNumber = 0;
+		this.passportNumber = null;
+		this.originTown = null;
+		this.originDate = null;
+		this.originTime = null;
+		this.destinationTown = null;
+		this.destinationDate = null;
+		this.destinationTime = null;
+	}
 	public int getId() {
 		return id;
 	}

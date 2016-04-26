@@ -24,5 +24,6 @@ public class Runner {
 		for (Passenger passenger : pass) {
 			System.out.println(passenger);
 		}
+		xmlUtils.exportCatalogToXML("src/passengersExpotr.xml", pass);
 	}
 }
