@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<passengers>
+<tns:passengers  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:tns="http://www.example.org/passengers"
+	     xsi:noNamespaceSchemaLocation="passengers.xsd">
     <passenger id="1">
         <passengers-info>
                 <firstName>Alex</firstName>
@@ -57,6 +59,7 @@
         <destination date="04.06.2016" time="12:00"  town="Barselona" />
     </passenger>
 </tns:passengers>
+
 
 
 
