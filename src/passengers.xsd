@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/passengers" 
+	xmlns:tns="http://www.example.org/passengers">
+	
+	<element name="passengers">
+	    <complexType>
+            <sequence>
+                <element name="passenger" type="tns:Passenger"
+	         minOccurs="1" maxOccurs="unbounded" />
+            </sequence>
+	    </complexType>
+	</element>
+        <complexType name="Passenger">
+        <sequence>
+            <element name="passengers-info" type="tns:Passengers-info" />
+            <element name="origin" type="tns:Origin" />
+            <element name="destination" type="tns:Destination" />
+        </sequence>
+        <attribute name="id" type="integer" use="required" />
+	</complexType>
+    <complexType name="Passengers-info">
+	    <sequence>
+            <element name="firstName" type="string" />
+            <element name="lastName" type="string" />
+            <element name="adress" type="tns:Adress" />
+            <element name="passport-number" type="string" />
+        </sequence>
+	</complexType>
+    <complexType name="Adress">
+            <sequence>
+                <element name="town" type="string" />
+                <element name="street" type="string" />
+                <element name="home-number" type="integer" />
+            </sequence>
+	</complexType>
+    <complexType name="Origin">
+            <attribute name="date" type="string" use="required" />
+            <attribute name="time" type="string" use="required" />
+            <attribute name="town" type="string" use="required" />
+	</complexType>
+    <complexType name="Destination">
+	       <attribute name="date" type="string" use="required" />
+           <attribute name="time" type="string" use="required" />
+           <attribute name="town" type="string" use="required" />
+	</complexType>
+</schema>
+
+
+
+<!--
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/results">
+       
+    <element name="passengers">
+	    <complexType>
+            <sequence>
+                <element name="passenger" type="Passenger"
+	                 minOccurs="1" maxOccurs="unbounded" />
+            </sequence>
+	    </complexType>
+	</element>
+    <complexType name="Passenger">
+	    <sequence>
+			<element name="passengers-info" type="Passengers-info" />
+            <element name="origin" type="Origin" />
+            <element name="destination" type="Destination" />
+        </sequence>
+        <attribute name="id" type="integer" use="required" />
+	</complexType>
+    <complexType name="Passengers-info">
+	    <sequence>
+            <element name="firstName" type="string" />
+            <element name="lastName" type="string" />
+            <element name="adress" type="Adress" />
+            <element name="passport-number" type="integer" />
+        </sequence>
+	</complexType>
+    <complexType name="Adress">
+            <element name="town" type="string" />
+            <element name="street" type="string" />
+            <element name="home-number" type="integer" />
+	</complexType>
+    <complexType name="Origin">
+            <attribute name="date" type="string" use="required" />
+            <attribute name="time" type="string" use="required" />
+	</complexType>
+    <complexType name="Destination">
+	       <attribute name="date" type="string" use="required" />
+            <attribute name="time" type="string" use="required" />
+	</complexType>    
+</schema>-->
