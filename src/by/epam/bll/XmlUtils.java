@@ -25,7 +25,10 @@ import org.xml.sax.SAXException;
 import by.epam.model.Passenger;
 
 public class XmlUtils {
-
+	
+	private static final String XSI_NAMESPACE ="http://www.w3.org/2001/XMLSchema-instance";
+	private static final String TNS_NAMESPACE ="http://www.example.org/passengers";
+	private static final String SHEME_LOCATION ="passengers.xsd";
 	public static List<Passenger> readPassengersFromFile(String fileName) {
 		List<Passenger> passengers = new ArrayList<>();
 		Document doc = null;
@@ -91,6 +94,9 @@ public class XmlUtils {
 			documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			Document document = documentBuilder.newDocument();
 			Element rootElement = document.createElement("passengers");
+			rootElement.setAttribute("xmlns:xsi",XSI_NAMESPACE);
+			rootElement.setAttribute("xmlns:tns",TNS_NAMESPACE);
+			rootElement.setAttribute("xsi:noNamespaceSchemaLocation",SHEME_LOCATION);
 			document.appendChild(rootElement);
 			for (int i = 0; i < passenger.size();i++){
 				Element town = document.createElement("town");

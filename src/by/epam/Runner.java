@@ -19,11 +19,11 @@ import by.epam.model.Passenger;
 public class Runner {
 	public static void main(String[] args) {
 		List<Passenger> pass;
-		XmlUtils xmlUtils = new XmlUtils();
-		pass = xmlUtils.readPassengersFromFile("src/passengers.xml");
+		
+		pass = XmlUtils.readPassengersFromFile("src/passengers.xml");
 		for (Passenger passenger : pass) {
 			System.out.println(passenger);
 		}
-		xmlUtils.exportCatalogToXML("src/passengersExpotr.xml", pass);
+		XmlUtils.exportCatalogToXML("src/passengersExpotr.xml", pass);
 	}
 }

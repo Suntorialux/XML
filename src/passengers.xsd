@@ -11,7 +11,7 @@
             </sequence>
 	    </complexType>
 	</element>
-        <complexType name="Passenger">
+    <complexType name="Passenger">
         <sequence>
             <element name="passengers-info" type="tns:Passengers-info" />
             <element name="origin" type="tns:Origin" />
