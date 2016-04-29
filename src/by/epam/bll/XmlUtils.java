@@ -97,6 +97,7 @@ public class XmlUtils {
 			rootElement.setAttribute("xmlns:xsi",XSI_NAMESPACE);
 			rootElement.setAttribute("xmlns:tns",TNS_NAMESPACE);
 			rootElement.setAttribute("xsi:noNamespaceSchemaLocation",SHEME_LOCATION);
+			
 			document.appendChild(rootElement);
 			for (int i = 0; i < passenger.size();i++){
 				Element town = document.createElement("town");
@@ -134,9 +135,9 @@ public class XmlUtils {
 				pass.appendChild(destination);
 				pass.setAttribute("id", Integer.toString(passenger.get(i).getId()));
 				rootElement.appendChild(pass);
-				
-				exportToXml(rootElement,document,fileName);
+	
 			}
+			exportToXml(rootElement,document,fileName);
 		} catch (ParserConfigurationException | IOException | TransformerException e) {
 			e.printStackTrace();
 		} 
