@@ -93,10 +93,11 @@ public class XmlUtils {
 		try {
 			documentBuilder = documentBuilderFactory.newDocumentBuilder();
 			Document document = documentBuilder.newDocument();
-			Element rootElement = document.createElement("passengers");
+			Element rootElement = document.createElement("tns:passengers");
 			rootElement.setAttribute("xmlns:xsi",XSI_NAMESPACE);
 			rootElement.setAttribute("xmlns:tns",TNS_NAMESPACE);
 			rootElement.setAttribute("xsi:noNamespaceSchemaLocation",SHEME_LOCATION);
+			
 			
 			document.appendChild(rootElement);
 			for (int i = 0; i < passenger.size();i++){
